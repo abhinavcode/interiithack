@@ -15,7 +15,6 @@ def root(request):
 def get_level(user, game):
     """
     ADD COOL AI TO SELECT LEVEL HERE!
-
     """
     return 1
 

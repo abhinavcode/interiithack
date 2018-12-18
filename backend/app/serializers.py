@@ -4,7 +4,7 @@ from .models import *
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('level', 'name', 'phone')
+        fields = ('level', 'name', 'phone', 'owned_games')
 
 class PlaySerializer(serializers.ModelSerializer):
     class Meta:
