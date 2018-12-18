@@ -19,7 +19,8 @@ def add_played_game(play):
     """
     Do cool analytics and processing and stuff here. Change the user level if needed.
     """
-
+    play.user.level = get_recommended_games(play.user)
+    play.user.save()
 
 
 def get_recommended_games(user):
@@ -27,6 +28,7 @@ def get_recommended_games(user):
     Add Cool AI To Select Game Here!
     TODO - most important part of the backend
     """
+    return user.level+1
 
 
 def get_user_analytics(user):
