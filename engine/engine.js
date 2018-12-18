@@ -1,7 +1,7 @@
 function showText(text){
     var newBlob = document.createElement('div');
-    newBlob.classList.add('left');
-    newBlob.appendChild(text);
+    $(newBlob).addClass('left');
+    $(newBlob).html(text);
     $(".body").append(newBlob);
 }
 
