@@ -1,12 +1,12 @@
-import { start } from "repl";
-
 function showText(text){
     var newBlob = document.createElement('div');
     newBlob.classList.add('left');
     newBlob.appendChild(text);
+    $(".body").append(newBlob);
 }
 
 $(document).ready(()=>{
+    console.log(0)
     var script = document.createElement('script');
     script.onload = ()=>{
         alert('loaded script');
@@ -15,4 +15,6 @@ $(document).ready(()=>{
         });
     }
     script.src = 'deploy.js';
+    document.head.appendChild(script);
+    console.log(1)
 });
