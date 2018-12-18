@@ -1,0 +1,55 @@
+.main-layout {
+	background: url('../img/background_main.svg') center / cover;
+	overflow-x: hidden;
+}
+
+.page-content {
+	margin-top: 64px;
+}
+
+.player-info {
+	background: rgba(255, 255, 255, 0.5);
+	padding: 24px;
+	text-align: center;
+}
+
+.game-suggestions {
+	margin-top: 32px;
+	background: rgba(255, 255, 255, 0.5);
+	padding: 24px;
+	width: 100vw;
+}
+
+.game-card {
+	width: 256px;
+	height: 384px;
+	background: #666666 center / cover;
+	margin-right: 25px;
+}
+
+.game-card > .mdl-card__actions {
+	height: 52px;
+	padding: 16px;
+	background: rgba(0, 0, 0, 0.2);
+	color: #ffffff;
+	font-weight: 500;
+	font-size: 21px;
+	display: flex;
+	box-sizing:border-box;
+	align-items: center;
+}
+
+.carousel-container {
+	overflow: hidden;
+}
+
+.game-play-random {
+	margin-top: 100px;
+	width: 100vw;
+	text-align: center;
+}
+
+.game-play-random  a {
+	font-size: 72px;
+	color: #000000;
+}
