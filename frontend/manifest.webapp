@@ -1,11 +1,13 @@
 {
     "version":"1.0.0",
+	"cursor" : true,
+"ime_default_softkey_bar":true,
     "name": "Zipcodes",
     "description": "This app gives you information on zipcodes of the US!",
 	"theme":"#51b7c1",
 	"origin": "app://firstapp.jio.com",
 	"display":"FirstApp",
-    "launch_path": "/index.html",
+    "launch_path": "/index.htm",
     "icons": {
         "128": "/images/zipcode_128.png",
         "512": "/images/zipcode_512.png"
