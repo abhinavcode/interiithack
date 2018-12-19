@@ -11,13 +11,19 @@ function createChatBubble(is_bot) {
 function showChatText(text, is_bot) {
 	var newBlob = createChatBubble(is_bot);
 	newBlob.innerText = text;
-	$(".chat-container").append(newBlob);
+	
+	var $chatContainer = $(".chat-container");
+	$chatContainer.append(newBlob);
+	$chatContainer.scrollTop($chatContainer.prop('scrollHeight'));
 }
 
 function showChatImage(img, is_bot) {
 	var newBlob = createChatBubble(is_bot);
 	newBlob.innerHTML = `<img src="${img}" />`
-	$(".chat-container").append(newBlob);
+
+	var $chatContainer = $(".chat-container");
+	$chatContainer.append(newBlob);
+	$chatContainer.scrollTop($chatContainer.prop('scrollHeight'));
 }
 
 var requestSendMessage = function() {
