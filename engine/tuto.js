@@ -29,7 +29,7 @@ function input(response) {
         clearTimeout(current_timer);
         if(response.toLowerCase().indexOf("yes")>-1){
             showText("Awesome! You weren't moving for a while, so thought I'd ask...");
-            end(0);
+            setTimeout(()=>{end(0);}, 2000);
             return;
         }
         else{
@@ -38,7 +38,8 @@ function input(response) {
         }
     }
     if(response == 'A'){
-        end(1000);
+        showText("Good Work. Now We Can Proceed...")
+        setTimeout(()=>{end(1000);}, 2000);
         return;
     }
     else{
