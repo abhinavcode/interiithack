@@ -20,7 +20,7 @@ var requestSendMessage = function() {
 	_alias_requestSendMessage.call(this);
 
 	for (let i = 0; i < listGames.length; i++) {
-		if (msg.toLowerCase().indexOf(listGames[i].toLowerCase()) > -1){
+		if (msg.toLowerCase().indexOf(listGames[i].name.toLowerCase()) > -1){
 			launchGame(listGames[i].id);
 			break;
 		}
