@@ -1,0 +1,166 @@
+.main-layout {
+	background: url('../img/bg.svg') center / cover;
+	background-repeat: repeat;
+  	background-attachment: fixed;
+	overflow-x: hidden;
+}
+
+.page-content {
+	margin-top: 64px;
+}
+
+.body{
+	/* margin-top: 50px; */
+	padding-top: 60px;
+	position: relative;
+}
+
+.triangle-right {
+word-wrap: break-word;
+/* max-width: 70%; */
+position:relative;
+padding:15px;
+margin:1em 0 3em;
+color:#fff;
+background:#075698; /* default background for browsers without gradient support */
+/* css3 */
+/* z-index: 1000; */
+background:-moz-linear-gradient(#2e88c4, #075698);
+background:-o-linear-gradient(#2e88c4, #075698);
+background:linear-gradient(#2e88c4, #075698);
+-webkit-border-radius:10px;
+-moz-border-radius:10px;
+border-radius:10px;
+}
+
+/* Variant : for left positioned triangle
+------------------------------------------ */
+
+.triangle-right.left {
+margin-left:40px;
+background:#a9a1a1;
+}
+
+/* Variant : for right positioned triangle
+------------------------------------------ */
+
+.triangle-right.right {
+word-wrap: break-word;
+/* max-width: 70%; */
+margin-right:40px;
+/* margin-left:10px; */
+background:#075698;
+}
+
+/* THE TRIANGLE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.triangle-right:after {
+content:"";
+position:absolute;
+bottom:-20px; /* value = - border-top-width - border-bottom-width */
+left:50px; /* controls horizontal position */
+border-width:20px 0 0 20px; /* vary these values to change the angle of the vertex */
+border-style:solid;
+border-color:#075698 transparent;
+/* reduce the damage in FF3.0 */
+display:block;
+width:0;
+}
+
+/* Variant : left
+------------------------------------------ */
+
+.triangle-right.left:after {
+top:16px;
+left:-40px; /* value = - border-left-width - border-right-width */
+bottom:auto;
+border-width:15px 40px 0 0; /* vary these values to change the angle of the vertex */
+border-color:transparent #a9a1a1;
+}
+
+/* Variant : right
+------------------------------------------ */
+
+.triangle-right.right:after {
+top:16px;
+right:-40px; /* value = - border-left-width - border-right-width */
+bottom:auto;
+left:auto;
+border-width:15px 0 0 40px; /* vary these values to change the angle of the vertex */
+border-color:transparent #075698 ;
+}
+  
+
+.player-info {
+	background: rgba(255, 255, 255, 0.5);
+	padding: 24px;
+	text-align: center;
+}
+
+.game-suggestions {
+	margin-top: 32px;
+	background: rgba(255, 255, 255, 0.5);
+	padding: 24px;
+	width: 100vw;
+}
+
+.game-card {
+	width: 256px;
+	height: 384px;
+	background: #666666 center / cover;
+	margin-right: 25px;
+}
+
+.game-card > .mdl-card__actions {
+	height: 52px;
+	padding: 16px;
+	background: rgba(0, 0, 0, 0.2);
+	color: #ffffff;
+	font-weight: 500;
+	font-size: 21px;
+	display: flex;
+	box-sizing:border-box;
+	align-items: center;
+}
+
+.carousel-container {
+	overflow: hidden;
+}
+
+.game-play-random {
+	margin-top: 100px;
+	width: 100vw;
+	text-align: center;
+}
+
+.game-play-random  a {
+	font-size: 72px;
+	color: #000000;
+}
+
+.add-game {
+	text-align: center;
+	background: #ffffff;
+	padding-bottom: 20px;
+}
+
+.mdl-grid {
+	width: 100vw;
+}
+tr:nth-child(even) {background-color: #f2f2f2;}
+table{
+	width:100vw;  
+	opacity: 0.8;
+}
+thead{
+	background-color: #195990;
+}
+th{
+		color: white;
+}
+.footer {
+	float: bottom;
+	width: 80%;
+	border: 3px solid #8AC007;
+}
