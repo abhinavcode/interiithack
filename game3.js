@@ -6,15 +6,14 @@ function proceedDemo(){
     showText("Social Awareness is important for everyone, and you should know too.");
     showImage("https://upload.wikimedia.org/wikipedia/commons/7/74/Dharavi_Slum_in_Mumbai.jpg");
     showText("Which slum area, known as one of the largest in Asia, is shown above?");
+    onRequestInput();
 }
 
 function start() {
     return new Promise(function(resolve, reject) {
         // do a thing, possibly async, then ...
-
         proceedDemo();
         resolve("Stuff worked!");
-
     });
 }
 
