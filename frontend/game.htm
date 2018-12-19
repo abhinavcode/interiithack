@@ -3,17 +3,16 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>GameName</title>
+	<title>Play Game</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<link rel="stylesheet" href="script/material.min.css">
-    <script defer src="script/material.min.js"></script>
+	<link rel="stylesheet" href="css/font-google-apis.css">
+	<link rel="stylesheet" href="css/material.indigo-pink.min.css">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/component.css">
 	<link rel="stylesheet" href="css/all.css">
-	<!-- <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css"> -->
 
 	<script src="js/modernizr.custom.js"></script>
+	<script defer src="js/material.min.js"></script>
 
 	<link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
 </head>
@@ -22,22 +21,30 @@
 		<header class="mdl-layout__header">
 			<div class="mdl-layout__header-row">
 				<div aria-expanded="true" role="button" style="display: flex; justify-content: center; align-items: center;" tabindex="0" class="mdl-layout__drawer-button"><i class="fas fa-sm fa-arrow-left"></i></div>
-				<span class="mdl-layout-title" id="title">GameName</span>
+				<span class="mdl-layout-title" id="game_title">GameName</span>
 			</div>
 		</header>
+		<main class="mdl-layout__content">
+			<div class="chat-container"></div>
+		</main>
+
+		<footer class="footer">
+			<div class="chat-input">
+				<div class="mdl-textfield mdl-js-textfield">
+					<input class="mdl-textfield__input" type="text" id="chat_message">
+					<label class="mdl-textfield__label" for="chat_message">Type Message...</label>
+				</div>
+			</div>
+			<button id="btn_chat_send" class="chat-send mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+				Send
+			</button> 
+		</footer>
 	</div>
-	<div class="body main-layout">
-		<div class="triangle-right left">guefaeefefsfrsgsrgrsdgrsgrsfgsrgrfgsrfgsthtdhdthtgdgrthdthgdkfaefj</div>
-		<div class="triangle-right right">guefaeefefsfrsgsrgrsdgrsgrsfgsrgrfgsrfgsthtdhdthtgdgrthdthgdkfaefj</div>
-		<div class="triangle-right left">guefaeefefsfrsgsrgrsdgrsgrsfgsrgrfgsrfgsthtdhdthtgdgrthdthgdkfaefj</div>
-		<div class="triangle-right right">guefaeefefsfrsgsrgrsdgrsgrsfgsrgrfgsrfgsthtdhdthtgdgrthdthgdkfaefj</div>
-		<div class="triangle-right left">guefaeefefsfrsgsrgrsdgrsgrsfgsrgrfgsrfgsthtdhdthtgdgrthdthgdkfaefj</div>
-		<div class="triangle-right right">guefaeefefsfrsgsrgrsdgrsgrsfgsrgrfgsrfgsthtdhdthtgdgrthdthgdkfaefj</div>
-		<div class="triangle-right left">guefaeefefsfrsgsrgrsdgrsgrsfgsrgrfgsrfgsthtdhdthtgdgrthdthgdkfaefj</div>
-		<div class="triangle-right right">guefaeefefsfrsgsrgrsdgrsgrsfgsrgrfgsrfgsthtdhdthtgdgrthdthgdkfaefj</div>
-		<div class="triangle-right left">guefaeefefsfrsgsrgrsdgrsgrsfgsrgrfgsrfgsthtdhdthtgdgrthdthgdkfaefj</div>
-		<div class="triangle-right right">guefaeefefsfrsgsrgrsdgrsgrsfgsrgrfgsrfgsthtdhdthtgdgrthdthgdkfaefj</div>
-		
-	</div>
+	
+	<!-- Scripts -->
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/constants.js"></script>
+	<script src="js/chat.js"></script>
+	<script src="js/game.js"></script>
 </body>
 </html>
