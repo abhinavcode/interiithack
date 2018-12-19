@@ -159,3 +159,8 @@ thead{
 th{
 		color: white;
 }
+.footer {
+	float: bottom;
+	width: 80%;
+	border: 3px solid #8AC007;
+}
