@@ -8,6 +8,7 @@ from rest_framework.response import Response
 import json
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
+from django.db.models import Avg, Max
 # Create your views here.
 
 
@@ -19,7 +20,15 @@ def add_played_game(play):
     """
     Do cool analytics and processing and stuff here. Change the user level if needed.
     """
-    play.user.level = get_recommended_games(play.user)
+    games = Play.objects.filter(game=play.game)
+    total = 0
+    for game in list(games):
+        total += game.score
+    average_score = total/len(games)
+    if ((play.score - average_score) > average_score/2.1):
+        play.user.level += 1
+    elif ((average_score - play.score) > average_score/1.5):
+        play.user.level -= 1
     play.user.save()
 
 
@@ -28,7 +37,9 @@ def get_recommended_games(user):
     Add Cool AI To Select Game Here!
     TODO - most important part of the backend
     """
-    return user.level+1
+    games = list(Game.objects.all())
+    games.sort(key = lambda x: abs(x.level-user.level))
+    return games[0:5]
 
 
 def get_user_analytics(user):
@@ -51,7 +62,7 @@ class UserViewSet(viewsets.ModelViewSet):
             user = User.objects.get(pk=pk)
         except:
             return Response(json.dumps({'detail':'No such user'}), status=status.HTTP_404_NOT_FOUND)
-        return JsonResponse(get_recommended_games(user), status=200)
+        return JsonResponse(GameSerializer(get_recommended_games(user), many=True).data, safe=False, status=200)
     
 
 class GameViewSet(viewsets.ModelViewSet):
