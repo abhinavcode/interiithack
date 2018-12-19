@@ -55,7 +55,7 @@ function init() {
 	greetings();
 	fetchGames();
 	$("#chat_message").focus();
-	let timer = setTimeout(() => launchGame(2), 5000);
+	let timer = setTimeout(() => launchGame(2), 15000);
 	$('#chat_message').on('keypress', () => clearTimeout(timer));
 }
 

@@ -1,8 +1,8 @@
 {
     "version":"1.0.0",
 	"cursor" : true,
-"ime_default_softkey_bar":true,
-    "name": "Zipcodes",
+	"ime_default_softkey_bar":true,
+    "name": "Varsity",
     "description": "This app gives you information on zipcodes of the US!",
 	"theme":"#51b7c1",
 	"origin": "app://firstapp.jio.com",
