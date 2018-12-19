@@ -10,11 +10,9 @@
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/component.css">
 	<link rel="stylesheet" href="css/all.css">
-	<link rel="stylesheet" href="css/flickity.min.css">
 
 	<script src="js/modernizr.custom.js"></script>
 	<script defer src="js/material.min.js"></script>
-
 
 	<link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
 </head>
@@ -48,8 +46,8 @@
 			    <tr>
 			      <td>1</td>
 			      <td class="mdl-data-table__cell--non-numeric">Abhinav</td>
-			      <td class="mdl-data-table__cell--non-numeric">III</td>
-			      <td>100000000</td>
+			      <td class="mdl-data-table__cell">3</td>
+			      <td>1000000</td>
 			    </tr>
 			  </tbody>
 		</table>
@@ -58,13 +56,12 @@
 
 
 	<!-- Scripts -->
-	<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-	<script src="js/index.js"></script>
 	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/constants.js"></script>
 	<script>
-		$.get('http://techmeetbhu.herokuapp.com/app/users', function(result){
+		$.get(`${WEB_URL}users`, function(result){
 			$.each(result, function(i, field){
-				$('#myTable > tbody:last-child').append('<tr><td>1</td><td class="mdl-data-table__cell--non-numeric">'+field['name']+'</td><td class="mdl-data-table__cell--non-numeric">'+(field['level']+1)+'</td><td>100000000</td></tr>');
+				$('#myTable > tbody:last-child').append('<tr><td>2</td><td class="mdl-data-table__cell--non-numeric">'+field['name']+'</td><td class="mdl-data-table__cell">'+(field['level'])+'</td><td>1000</td></tr>');
 			});
 		});
 	</script>

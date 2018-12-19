@@ -9,7 +9,7 @@ const replies = [
 ];
 
 function greetings() {
-	showChatText('Hiya there! Here are some games for you.', true);
+	showChatText('Hi there! Here are some games for you.', true);
 }
 
 function fetchGames() {
