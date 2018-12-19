@@ -65,7 +65,7 @@ class GameViewSet(viewsets.ModelViewSet):
             return Response(json.dumps({'detail':'No such game'}), status=status.HTTP_404_NOT_FOUND)
         game.plays += 1
         game.save()
-        return JSONResponse({'code':game.code}, status=status.HTTP_200_OK)
+        return JsonResponse(GameSerializer(game).data, status=status.HTTP_200_OK)
     def pre_save(self, obj):
         obj.code = self.request.FILES.get('code')
 

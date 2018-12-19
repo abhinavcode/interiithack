@@ -1,3 +1,7 @@
+
+const URL = 'http://127.0.0.1:8000/app/';
+const MEDIA_URL = 'http://127.0.0.1:8000';
+
 function showText(text, right){    
     var newBlob = document.createElement('div');
     if(right === true) $(newBlob).addClass('right');
@@ -7,10 +11,19 @@ function showText(text, right){
 }
 
 function end(score){
-    alert("Ended with score "+score);
+    const timeTaken = new Date().getTime() - startTime;
+    $.ajax(
+        {
+            type: 'POST',
+            url: URL+'play/',
+            dataType: 'json',
+            data: JSON.stringify({score: score, time: timeTaken, game: game_uid, user: user_uid, level:game.level})
+        }
+    )
 }
 
 let startTime = -1;
+let game = null;
 
 function mainLoop(){
     startTime = new Date().getTime();
@@ -23,12 +36,16 @@ function mainLoop(){
     });
 }
 
+var game_uid = 4, user_uid="9876543210";
 $(document).ready(()=>{
-    
-    var script = document.createElement('script');
-    script.onload = ()=>{
-        start().then(mainLoop);
-    }
-    script.src = 'deploy.js';
-    document.head.appendChild(script);
+    $.get(URL+'games/'+game_uid+'/play/').then((response)=>{
+        game = response;
+        var script = document.createElement('script');
+        //UPDATE UI WITH GAME DATA TODO LIKE TITLE
+        script.onload = ()=>{
+            start().then(mainLoop);
+        }
+        script.src = MEDIA_URL+response.code;
+        document.head.appendChild(script);
+    });
 });
