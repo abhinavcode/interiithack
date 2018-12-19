@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>GameName</title>
+	<title>DummyName</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/font-google-apis.css">
 	<link rel="stylesheet" href="css/material.indigo-pink.min.css">
@@ -16,34 +16,44 @@
 	<script defer src="js/material.min.js"></script>
 
 	<link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
-
 </head>
 <body>
 	<div class="main-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
 		<header class="mdl-layout__header">
 			<div class="mdl-layout__header-row">
-				<div aria-expanded="true" role="button" style="display: flex; justify-content: center; align-items: center;" tabindex="0" class="mdl-layout__drawer-button"><i class="fas fa-sm fa-arrow-left"></i></div>
-				<span class="mdl-layout-title" id="title">GameName</span>
+				<span class="mdl-layout-title">DummyName</span>
+				<div class="mdl-layout-spacer"></div>
+				<nav class="mdl-navigation cl-effect-14">
+					<a href="#">
+						<i class="fas fa-trophy"></i> <span class="mdl-layout--large-screen-only">Leaderboard</span>
+					</a>
+				</nav>
 			</div>
 		</header>
-	</div>
-	<div class="body main-layout">
-		<!--<div class="triangle-right left">guefaeefefsfrsgsrgrsdgrsgrsfgsrgrfgsrfgsthtdhdthtgdgrthdthgdkfaefj</div>-->
-		<!--<div class="triangle-right right">guefaeefefsfrsgsrgrsdgrsgrsfgsrgrfgsrfgsthtdhdthtgdgrthdthgdkfaefj</div>-->
-		<!--<div class="triangle-right left">guefaeefefsfrsgsrgrsdgrsgrsfgsrgrfgsrfgsthtdhdthtgdgrthdthgdkfaefj</div>-->
-		<!--<div class="triangle-right right">guefaeefefsfrsgsrgrsdgrsgrsfgsrgrfgsrfgsthtdhdthtgdgrthdthgdkfaefj</div>-->
-		<!--<div class="triangle-right left">guefaeefefsfrsgsrgrsdgrsgrsfgsrgrfgsrfgsthtdhdthtgdgrthdthgdkfaefj</div>-->
-		<!--<div class="triangle-right right">guefaeefefsfrsgsrgrsdgrsgrsfgsrgrfgsrfgsthtdhdthtgdgrthdthgdkfaefj</div>-->
-		<!--<div class="triangle-right left">guefaeefefsfrsgsrgrsdgrsgrsfgsrgrfgsrfgsthtdhdthtgdgrthdthgdkfaefj</div>-->
-		<!--<div class="triangle-right right">guefaeefefsfrsgsrgrsdgrsgrsfgsrgrfgsrfgsthtdhdthtgdgrthdthgdkfaefj</div>-->
-		<!--<div class="triangle-right left">guefaeefefsfrsgsrgrsdgrsgrsfgsrgrfgsrfgsthtdhdthtgdgrthdthgdkfaefj</div>-->
-		<div class="triangle-right right">guefaeefefsfrsgsrgrsdgrsgrsfgsrgrfgsrfgsthtdhdthtgdgrthdthgdkfaefj</div>
-		
-	</div>
-	<div class="footer">
-		<input type="text" name="fname"><span><button id="send" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent"> Send
-</button> </span>
 
+	<main class="mdl-layout__content">
+		<div class="chat-container">
+			<div class="triangle-right right">guefaeefefsfrsgsrgrsdgrsgrsfgsrgrfgsrfgsthtdhdthtgdgrthdthgdkfaefj</div>
+			<div class="triangle-right right">guefaeefefsfrsgsrgrsdgrsgrsfgsrgrfgsrfgsthtdhdthtgdgrthdthgdkfaefj</div>
+			<div class="triangle-right right">guefaeefefsfrsgsrgrsdgrsgrsfgsrgrfgsrfgsthtdhdthtgdgrthdthgdkfaefj</div>
+			<div class="triangle-right right">guefaeefefsfrsgsrgrsdgrsgrsfgsrgrfgsrfgsthtdhdthtgdgrthdthgdkfaefj</div>
+			<div class="triangle-right right">guefaeefefsfrsgsrgrsdgrsgrsfgsrgrfgsrfgsthtdhdthtgdgrthdthgdkfaefj</div>
+			<div class="triangle-right right">guefaeefefsfrsgsrgrsdgrsgrsfgsrgrfgsrfgsthtdhdthtgdgrthdthgdkfaefj</div>
+		</div>
+		
+	</main>
+
+	<footer class="footer">
+		<div class="chat-input">
+			<div class="mdl-textfield mdl-js-textfield">
+				<input class="mdl-textfield__input" type="text" id="message">
+				<label class="mdl-textfield__label" for="message">Type Message...</label>
+			</div>
+		</div>
+		<button id="send" class="chat-send mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+			Send
+		</button> 
+	</footer>
 	</div>
 </body>
 </html>
