@@ -13,17 +13,36 @@
 
 	<script src="js/modernizr.custom.js"></script>
 	<script defer src="js/material.min.js"></script>
-
+	<style>
+	.active{
+		background: #dedede;
+	}
+	.active:hover{
+		background: #bababa !important;
+	}
+	</style>
 	<link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
 </head>
-<body>
-	<div class="main-layout mdl-layout mdl-js-layout mdl-layout__header--scroll">
-		<header class="mdl-layout__header">
-			<div class="mdl-layout__header-row">
-				<span class="mdl-layout-title">Developers Portal</span>
-			</div>
-		</header>
-	</div>
+<body class="main-layout">
+	<!-- No header, and the drawer stays open on larger screens (fixed drawer). -->
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+		<div class="mdl-layout__drawer">
+		  <span class="mdl-layout-title">Title</span>
+		  <nav class="mdl-navigation">
+			<hr />
+			<a class="mdl-navigation__link" href="">Your Games</a>
+			<a class="mdl-navigation__link active" href="">Add Game</a>
+			<hr />
+			<a class="mdl-navigation__link" href="">Documentation</a>
+			<a class="mdl-navigation__link" href="">SDK Tutorial</a>
+			<a class="mdl-navigation__link" href="">Start Here</a>
+			<a class="mdl-navigation__link" href="">Support</a>
+		  </nav>
+		</div>
+		<main class="mdl-layout__content">
+		  <div class="page-content"><!-- Your content goes here --></div>
+		</main>
+	  </div>
 
 	<main class="mdl-layout__content">
 		<div class="page-content">
@@ -31,34 +50,28 @@
 				<div class="mdl-cell mdl-cell--3-col"></div>
 				<div class="add-game mdl-cell mdl-cell--6-col mdl-shadow--6dp">
 					<h3>Add your game</h3>
-					<form action="#" method="post">
+					<form action="http://127.0.0.1:8000/app/games/" enctype="multipart/form-data" method="post">
 						<div class="form-group">
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input class="mdl-textfield__input" type="text" id="name">
+								<input class="mdl-textfield__input" type="text" name="name" id="name">
 								<label class="mdl-textfield__label" for="name">Name...</label>
 							</div>
 
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input class="mdl-textfield__input" type="text" id="genre">
-								<label class="mdl-textfield__label" for="genre">Genre...</label>
-							</div>
+								<input class="mdl-textfield__input" type="text" name="genre" id="genre">
+								<label class="mdl-textfield__label" for="genre">Genre...<label>
 						</div>
 
 						<div class="form-group">
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input class="mdl-textfield__input" type="url" id="image">
-								<label class="mdl-textfield__label" for="image">Image...</label>
-							</div>
-
-							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input class="mdl-textfield__input" type="number" id="level">
+								<input class="mdl-textfield__input" type="number" name="level" id="level">
 								<label class="mdl-textfield__label" for="level">Required Level...</label>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input class="mdl-textfield__input" type="file" id="code">
+								<input class="mdl-textfield__input" type="file" name ="code" id="code">
 							</div>
 						</div>
 						<div class="form-group">
