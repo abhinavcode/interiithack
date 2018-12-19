@@ -21,7 +21,10 @@ def add_played_game(play):
     Do cool analytics and processing and stuff here. Change the user level if needed.
     """
     games = Play.objects.filter(game=play.game)
-    average_score = games.aggregate(Avg('score')).values()[0]
+    total = 0
+    for game in list(games):
+        total += game.score
+    average_score = total/len(games)
     if ((play.score - average_score) > average_score/2.1):
         play.user.level += 1
     elif ((average_score - play.score) > average_score/1.5):

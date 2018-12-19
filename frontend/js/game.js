@@ -21,7 +21,10 @@ function end(score){
 			url: WEB_URL+'play/',
 			dataType: 'json',
 			data: JSON.stringify({
-				score: score, time: timeTaken, game: game_uid, user: user_uid, level:game.level})
+				score: score, time: timeTaken, game: game_uid, user: user_uid, level:game.level}),
+			success: ()=>{
+				window.location = 'index.htm';
+			}
 		}
 	)
 }
