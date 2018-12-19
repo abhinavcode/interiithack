@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>DummyName</title>
+	<title>Alice</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/font-google-apis.css">
 	<link rel="stylesheet" href="css/material.indigo-pink.min.css">
@@ -25,7 +25,7 @@
 				<span class="mdl-layout-title">DummyName</span>
 				<div class="mdl-layout-spacer"></div>
 				<nav class="mdl-navigation cl-effect-14">
-					<a href="#">
+					<a href="index.htm">
 						<i class="fas fa-home"></i> <span class="mdl-layout--large-screen-only">Home</span>
 					</a>
 				</nav>
@@ -35,7 +35,7 @@
 
 	<main class="mdl-layout__content">
 		<div class="page-content">
-			<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+			<table id="myTable" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
 			  <thead>
 			    <tr>
 			      <th>Rank</th>
@@ -51,13 +51,6 @@
 			      <td class="mdl-data-table__cell--non-numeric">III</td>
 			      <td>100000000</td>
 			    </tr>
-			    <tr>
-			      <td>1</td>
-			      <td class="mdl-data-table__cell--non-numeric">Abhinav</td>
-			      <td class="mdl-data-table__cell--non-numeric">III</td>
-			      <td>100000000</td>
-			    </tr>
-			    
 			  </tbody>
 		</table>
 		</div>
@@ -67,5 +60,13 @@
 	<!-- Scripts -->
 	<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 	<script src="js/index.js"></script>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script>
+		$.get('http://techmeetbhu.herokuapp.com/app/users', function(result){
+			$.each(result, function(i, field){
+				$('#myTable > tbody:last-child').append('<tr><td>1</td><td class="mdl-data-table__cell--non-numeric">'+field['name']+'</td><td class="mdl-data-table__cell--non-numeric">'+(field['level']+1)+'</td><td>100000000</td></tr>');
+			});
+		});
+	</script>
 </body>
 </html>
