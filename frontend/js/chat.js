@@ -22,6 +22,8 @@ function showChatImage(img, is_bot) {
 
 var requestSendMessage = function() {
 	let msg = $('#chat_message').val();
+	if (!msg)
+		return;
 	sendMessage(msg);
 }
 

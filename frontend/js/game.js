@@ -2,7 +2,7 @@
 var startTime = -1;
 var game;
 var game_uid;
-var user_uid = "9876543210";
+var user_uid = USER_UID;
 
 // SDK methods
 function showText(text) {
@@ -18,7 +18,7 @@ function end(score){
 	$.ajax(
 		{
 			type: 'POST',
-			url: URL+'play/',
+			url: WEB_URL+'play/',
 			dataType: 'json',
 			data: JSON.stringify({
 				score: score, time: timeTaken, game: game_uid, user: user_uid, level:game.level})
@@ -26,6 +26,7 @@ function end(score){
 	)
 }
 
+// Helper methods
 function updateGameDetails() {
 	$('#game_title').html(game.name);
 }
@@ -35,10 +36,13 @@ var requestSendMessage = function() {
 	let msg = $('#chat_message').val();
 
 	_alias_requestSendMessage.call(this);
-	console.log(msg);
 	input(msg);
 };
 
+var cleanup = function() {
+	localStorage.removeItem('game.uid');
+	window.location = 'index.htm';
+};
 
 function mainLoop() {
     startTime = new Date().getTime();
@@ -51,7 +55,7 @@ $(document).ready(()=>{
 		return;
 	}
 
-    $.get(URL+'games/'+game_uid+'/play/').then((response)=>{
+    $.get(WEB_URL+'games/'+game_uid+'/play/').then((response)=>{
 		game = response;
 		updateGameDetails();
 		var script = document.createElement('script');
