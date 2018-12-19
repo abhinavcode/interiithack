@@ -52,7 +52,7 @@ class UserViewSet(viewsets.ModelViewSet):
         except:
             return Response(json.dumps({'detail':'No such user'}), status=status.HTTP_404_NOT_FOUND)
         return JsonResponse(get_recommended_games(user), status=200)
-
+    
 
 class GameViewSet(viewsets.ModelViewSet):
     queryset = Game.objects.all()
@@ -66,7 +66,8 @@ class GameViewSet(viewsets.ModelViewSet):
         game.plays += 1
         game.save()
         return JSONResponse({'code':game.code}, status=status.HTTP_200_OK)
-
+    def pre_save(self, obj):
+        obj.code = self.request.FILES.get('code')
 
 class PlayViewSet(viewsets.ModelViewSet):
     queryset = Play.objects.all()

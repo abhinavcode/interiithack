@@ -4,4 +4,3 @@ __pycache__/
 yarn.lock
 node_modules/
 backend/.idea/
-backend/db.sqlite3

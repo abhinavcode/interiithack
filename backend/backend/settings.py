@@ -25,7 +25,7 @@ SECRET_KEY = '1n^%$l+uhm_f$z0a@c1&e+8yy+%+f=lxet58n&_z2b4y6t=9ac'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://techmeetbhu.herokuapp.com/','techmeetbhu.herokuapp.com','https://techmeetbhu.herokuapp.com','localhost']
+ALLOWED_HOSTS = ['127.0.0.1','https://techmeetbhu.herokuapp.com/','techmeetbhu.herokuapp.com','https://techmeetbhu.herokuapp.com','localhost']
 
 
 # Application definition
