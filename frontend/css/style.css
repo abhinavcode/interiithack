@@ -138,3 +138,13 @@ border-color:transparent #075698 ;
 	font-size: 72px;
 	color: #000000;
 }
+
+.add-game {
+	text-align: center;
+	background: #ffffff;
+	padding-bottom: 20px;
+}
+
+.mdl-grid {
+	width: 100vw;
+}
