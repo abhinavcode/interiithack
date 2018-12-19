@@ -10,6 +10,16 @@ function showText(text, right){
     $(".body").append(newBlob);
 }
 
+function showImage(img, right){    
+    var newBlob = document.createElement('div');
+    if(right === true) $(newBlob).addClass('right');
+    $(newBlob).addClass('left');
+    var image = document.createElement('img');
+    $(image).attr('src', img);
+    $(newBlob).append(image);
+    $(".body").append(newBlob);
+}
+
 function end(score){
     const timeTaken = new Date().getTime() - startTime;
     $.ajax(
@@ -38,14 +48,21 @@ function mainLoop(){
 
 var game_uid = 4, user_uid="9876543210";
 $(document).ready(()=>{
-    $.get(URL+'games/'+game_uid+'/play/').then((response)=>{
-        game = response;
-        var script = document.createElement('script');
-        //UPDATE UI WITH GAME DATA TODO LIKE TITLE
-        script.onload = ()=>{
-            start().then(mainLoop);
-        }
-        script.src = MEDIA_URL+response.code;
-        document.head.appendChild(script);
-    });
+    // $.get(URL+'games/'+game_uid+'/play/').then((response)=>{
+    //     game = response;
+    //     var script = document.createElement('script');
+    //     //UPDATE UI WITH GAME DATA TODO LIKE TITLE
+    //     script.onload = ()=>{
+    //         start().then(mainLoop);
+    //     }
+    //     script.src = MEDIA_URL+response.code;
+    //     document.head.appendChild(script);
+    // });
+    game = {level: 1};
+    var script = document.createElement('script');
+    script.onload = ()=>{
+        start().then(mainLoop);
+    }
+    script.src = 'deploy.js';
+    document.head.appendChild(script);
 });

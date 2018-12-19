@@ -1,44 +1,47 @@
-var currQuestion=1;
-const outputDict = {
-    1: "Whats 2+1?",
-    2: "Whats 3+1?",
-    3: "Whats 4+1?"
-};
+let current_timer = null;
+let timer_reason = null;
 
-const inputDict = {
-    1: "3",
-    2: "4",
-    3: "5"
-};
+function proceedDemo(){
+    timer_reason = null;
+    showText("Hello!");
+    showText("Let me introduce you to this game.")
+    showText("Would you please press the 'A' key on your phone?")
+    showImage("a.png")
+}
 
 function start() {
     return new Promise(function(resolve, reject) {
         // do a thing, possibly async, then ...
 
-        if (currQuestion>3) {
-            console.log("Cant have that many qns");
-            reject(Error("Cant have that many qns"));
-        }
-        else {
-            showText("Hi, lets begin the game");
-            showText(outputDict[currQuestion]);
-            resolve("Stuff worked!");
-        }
+        showText("Hi, do you know how to use the app?");
+        showText("Type YES if you do");
+        current_timer = setTimeout(proceedDemo, 3000);
+        timer_reason = "knowhow"
+        resolve("Stuff worked!");
+
     });
 }
 
 // handle user input
 // return appropriate output
 function input(response) {
-    if (response == inputDict[currQuestion]) {
-        showText("Correct");
-        ++currQuestion;
-        if (currQuestion>3)
-            end(currQuestion-1);
-        else
-            showText(outputDict[currQuestion]);
-    }else{
-        showText("Wrong Answer. Start Again");
-        showText(outputDict[currQuestion]);
+    if(timer_reason == "knowhow"){
+        clearTimeout(current_timer);
+        if(response.toLowerCase().indexOf("yes")>-1){
+            showText("Awesome! You weren't moving for a while, so thought I'd ask...");
+            end(0);
+            return;
+        }
+        else{
+            proceedDemo();
+            return;
+        }
+    }
+    if(response == 'A'){
+        end(1000);
+        return;
+    }
+    else{
+        showText('You Can Do It! Try Once More!');
     }
 }
