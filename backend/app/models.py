@@ -7,12 +7,14 @@ class Game(models.Model):
     plays = models.IntegerField(default=0)
     image = models.TextField(default="")
     code = models.FileField()
-
+    level = models.IntegerField(default=0)
+        
 class User(models.Model):
     level = models.IntegerField(default=0)
     name = models.TextField(default="Alice", blank=False)
     phone = models.TextField(unique=True, primary_key=True, null=False)
     owned_games = models.ManyToManyField(Game)
+
 class Play(models.Model):
     level = models.IntegerField(default=0)
     time = models.FloatField(default=0.0)
