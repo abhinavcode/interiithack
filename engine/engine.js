@@ -1,7 +1,3 @@
-
-const URL = 'http://127.0.0.1:8000/app/';
-const MEDIA_URL = 'http://127.0.0.1:8000';
-
 function showText(text, right){    
     var newBlob = document.createElement('div');
     if(right === true) $(newBlob).addClass('right');

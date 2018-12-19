@@ -10,7 +10,6 @@
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/component.css">
 	<link rel="stylesheet" href="css/all.css">
-	<link rel="stylesheet" href="css/flickity.min.css">
 
 	<script src="js/modernizr.custom.js"></script>
 	<script defer src="js/material.min.js"></script>
@@ -33,7 +32,7 @@
 
 	<main class="mdl-layout__content">
 		<div class="chat-container">
-			<div class="triangle-right right">guefaeefefsfrsgsrgrsdgrsgrsfgsrgrfgsrfgsthtdhdthtgdgrthdthgdkfaefj</div>
+			<div class="triangle-right left"><img src="img/background_main.svg" width="100px" height="100px"></div>
 			<div class="triangle-right right">guefaeefefsfrsgsrgrsdgrsgrsfgsrgrfgsrfgsthtdhdthtgdgrthdthgdkfaefj</div>
 			<div class="triangle-right right">guefaeefefsfrsgsrgrsdgrsgrsfgsrgrfgsrfgsthtdhdthtgdgrthdthgdkfaefj</div>
 			<div class="triangle-right right">guefaeefefsfrsgsrgrsdgrsgrsfgsrgrfgsrfgsthtdhdthtgdgrthdthgdkfaefj</div>
@@ -46,14 +45,20 @@
 	<footer class="footer">
 		<div class="chat-input">
 			<div class="mdl-textfield mdl-js-textfield">
-				<input class="mdl-textfield__input" type="text" id="message">
-				<label class="mdl-textfield__label" for="message">Type Message...</label>
+				<input class="mdl-textfield__input" type="text" id="chat_message">
+				<label class="mdl-textfield__label" for="chat_message">Type Message...</label>
 			</div>
 		</div>
-		<button id="send" class="chat-send mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+		<button id="btn_chat_send" class="chat-send mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
 			Send
 		</button> 
 	</footer>
 	</div>
+
+	<!-- Scripts -->
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/constants.js"></script>
+	<script src="js/chat.js"></script>
+	<script src="js/index.js"></script>
 </body>
 </html>
