@@ -16,6 +16,7 @@ class User(models.Model):
     owned_games = models.ManyToManyField(Game)
 
 class Play(models.Model):
+    last_played = models.DateTimeField(auto_now=True)
     level = models.IntegerField(default=0)
     time = models.FloatField(default=0.0)
     score = models.FloatField(default=0.0)

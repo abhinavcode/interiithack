@@ -9,19 +9,32 @@ import json
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
 # Create your views here.
+
+
 def root(request):
     return HttpResponse("Hi")
+
 
 def add_played_game(play):
     """
     Do cool analytics and processing and stuff here. Change the user level if needed.
     """
+    play.user.level = get_recommended_games(play.user)
+    play.user.save()
+
+
 def get_recommended_games(user):
     """
     Add Cool AI To Select Game Here!
+    TODO - most important part of the backend
     """
+    return user.level+1
+
+
 def get_user_analytics(user):
     return {"detail":"lol"}
+
+
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
@@ -40,6 +53,7 @@ class UserViewSet(viewsets.ModelViewSet):
             return Response(json.dumps({'detail':'No such user'}), status=status.HTTP_404_NOT_FOUND)
         return JsonResponse(get_recommended_games(user), status=200)
 
+
 class GameViewSet(viewsets.ModelViewSet):
     queryset = Game.objects.all()
     serializer_class = GameSerializer
@@ -52,7 +66,8 @@ class GameViewSet(viewsets.ModelViewSet):
         game.plays += 1
         game.save()
         return JSONResponse({'code':game.code}, status=status.HTTP_200_OK)
-        
+
+
 class PlayViewSet(viewsets.ModelViewSet):
     queryset = Play.objects.all()
     serializer_class = PlaySerializer
@@ -64,5 +79,3 @@ class PlayViewSet(viewsets.ModelViewSet):
             add_played_game(instance)
             return JsonResponse(serializer.data, status=201)
         return JsonResponse(serializer.errors, status=400)
-
-        
