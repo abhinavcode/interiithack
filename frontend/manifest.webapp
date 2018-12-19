@@ -1,0 +1,20 @@
+{
+    "version":"1.0.0",
+    "name": "Zipcodes",
+    "description": "This app gives you information on zipcodes of the US!",
+	"theme":"#51b7c1",
+	"origin": "app://firstapp.jio.com",
+	"display":"FirstApp",
+    "launch_path": "/index.html",
+    "icons": {
+        "128": "/images/zipcode_128.png",
+        "512": "/images/zipcode_512.png"
+    },
+    "developer": {
+        "name": "Romin Irani",
+        "url": "http://www.rominirani.com"
+    },
+	"fullscreen": false,
+	"default_locale": "en-US",
+	"type": "privileged"
+}
