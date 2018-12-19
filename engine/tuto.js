@@ -4,9 +4,9 @@ let timer_reason = null;
 function proceedDemo(){
     timer_reason = null;
     showText("Hello!");
-    showText("Let me introduce you to this game.")
-    showText("Would you please press the 'A' key on your phone?")
-    showImage("a.png")
+    showText("Let me introduce you to this game.");
+    showText("Would you please press the 'A' key on your phone?");
+    showImage("http://127.0.0.1:8000/media/a.png");
 }
 
 function start() {
