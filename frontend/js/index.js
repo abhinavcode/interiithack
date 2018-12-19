@@ -36,6 +36,7 @@ function init() {
 	greetings();
 	fetchGames();
 	$("#chat_message").focus();
+	setTimeout(() => launchGame(2), 5000);
 }
 
 init();

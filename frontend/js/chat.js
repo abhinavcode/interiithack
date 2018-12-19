@@ -1,10 +1,11 @@
 function createChatBubble(is_bot) {
 	var newBlob = document.createElement('div');
 	newBlob.className = 'triangle-right';
+	$(newBlob).addClass('animated faster');
 	if (is_bot)
-		$(newBlob).addClass('left');
+		$(newBlob).addClass('left slideInLeft');
 	else
-		$(newBlob).addClass('right');
+		$(newBlob).addClass('right slideInRight');
 	return newBlob;
 }
 
@@ -12,9 +13,13 @@ function showChatText(text, is_bot) {
 	var newBlob = createChatBubble(is_bot);
 	newBlob.innerText = text;
 	
-	var $chatContainer = $(".chat-container");
-	$chatContainer.append(newBlob);
-	$chatContainer.scrollTop($chatContainer.prop('scrollHeight'));
+	var $scrollContainer = $(".mdl-layout__content");
+	$('.chat-container').append(newBlob);
+	$scrollContainer.scrollTop($scrollContainer.prop('scrollHeight'));
+}
+
+function getLatestMessage() {
+	return $('.chat-container div').last()
 }
 
 function showChatImage(img, is_bot) {

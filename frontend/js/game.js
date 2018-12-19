@@ -29,6 +29,20 @@ function end(score){
 	)
 }
 
+function onRequestInput() {
+	$("#chat_message").focus();
+}
+
+function onCorrectResponse() {
+	let $latestMessage = getLatestMessage();
+	$latestMessage.addClass('pulse');
+}
+
+function onWrongResponse() {
+	let $latestMessage = getLatestMessage();
+	$latestMessage.addClass('wobble');
+}
+
 // Helper methods
 function updateGameDetails() {
 	$('#game_title').html(game.name);
@@ -48,7 +62,7 @@ var cleanup = function() {
 };
 
 function mainLoop() {
-    startTime = new Date().getTime();
+	startTime = new Date().getTime();
 }
 
 $(document).ready(()=>{
@@ -58,7 +72,7 @@ $(document).ready(()=>{
 		return;
 	}
 
-    $.get(WEB_URL+'games/'+game_uid+'/play/').then((response)=>{
+	$.get(WEB_URL+'games/'+game_uid+'/play/').then((response)=>{
 		game = response;
 		updateGameDetails();
 		var script = document.createElement('script');
@@ -69,3 +83,5 @@ $(document).ready(()=>{
 		document.head.appendChild(script);
 	});
 });
+
+$('#btn_back').bind('click touchstart', () => cleanup());

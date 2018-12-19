@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/component.css">
 	<link rel="stylesheet" href="css/all.css">
+	<link rel="stylesheet" href="css/animate.css">
 
 	<script src="js/modernizr.custom.js"></script>
 	<script defer src="js/material.min.js"></script>
@@ -20,7 +21,9 @@
 	<div class="main-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
 		<header class="mdl-layout__header">
 			<div class="mdl-layout__header-row">
-				<div aria-expanded="true" role="button" style="display: flex; justify-content: center; align-items: center;" tabindex="0" class="mdl-layout__drawer-button"><i class="fas fa-sm fa-arrow-left"></i></div>
+				<div aria-expanded="true" role="button" style="display: flex; justify-content: center; align-items: center;" tabindex="0" class="mdl-layout__drawer-button" id="btn_back">
+					<i class="fas fa-sm fa-arrow-left"></i>
+				</div>
 				<span class="mdl-layout-title" id="game_title">GameName</span>
 			</div>
 		</header>
@@ -37,7 +40,7 @@
 			</div>
 			<button id="btn_chat_send" class="chat-send mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
 				Send
-			</button> 
+			</button>
 		</footer>
 	</div>
 	
