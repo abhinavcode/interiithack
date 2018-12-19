@@ -139,6 +139,15 @@ border-color:transparent #075698 ;
 	color: #000000;
 }
 
+.add-game {
+	text-align: center;
+	background: #ffffff;
+	padding-bottom: 20px;
+}
+
+.mdl-grid {
+	width: 100vw;
+}
 tr:nth-child(even) {background-color: #f2f2f2;}
 table{
 	width:100vw;  
